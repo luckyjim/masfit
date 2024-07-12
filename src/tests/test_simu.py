@@ -47,21 +47,22 @@ def simu_moffat():
     sam = sampling_array_model(coef, s_patch)
     plt.imshow(sam[0])
 
+
 def test_simulation_image():
     nb_src = 120
     nb_pix = 1024
     s_patch = 51
-    coef = random_moffat(nb_src,s_patch, nb_pix)
-    sky_ima, sam = simulation_image(coef,nb_pix, s_patch)
+    coef = random_moffat(nb_src, s_patch, nb_pix)
+    sky_ima, sam = patch_to_image(coef, nb_pix, s_patch)
     plt.imshow(sky_ima)
-    
-    
+
+
 if __name__ == "__main__":
     # test_moffat_1()
     # test_moffat_2()
     # test_moffat_3()
     # test_center_pixel(7)
-    #sampling_moffat_2d(moffat_test_2d, 5)
-    #simu_moffat()
+    # sampling_moffat_2d(moffat_test_2d, 5)
+    # simu_moffat()
     test_simulation_image()
     plt.show()
